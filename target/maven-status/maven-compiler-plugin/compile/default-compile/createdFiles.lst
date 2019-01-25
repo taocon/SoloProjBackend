@@ -1,0 +1,15 @@
+com\qa\rest\ItemEndpoint.class
+com\qa\persistence\domain\Item.class
+com\qa\persistence\domain\Account.class
+com\qa\rest\AccountEndpoint.class
+com\qa\business\service\ItemService.class
+com\qa\business\service\AccountServiceImpl.class
+com\qa\business\service\ItemServiceImpl.class
+com\qa\business\service\AccountService.class
+com\qa\persistence\repository\ItemDBRepository.class
+com\qa\util\JSONUtil.class
+com\qa\persistence\repository\ItemRepository.class
+com\qa\persistence\repository\AccountRepository.class
+com\qa\rest\CORSFilter.class
+com\qa\persistence\repository\AccountDBRepository.class
+com\qa\rest\JAXActivator.class
