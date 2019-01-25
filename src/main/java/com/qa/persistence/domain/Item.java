@@ -20,6 +20,7 @@ public class Item {
 	private Long itemId;
 	private String itemName;
 	private int atkdmg;
+	private int atkspd;
 	private int ms;
 	private int armr;
 	private int str;
@@ -38,10 +39,11 @@ public class Item {
 
 	}
 
-	public Item(String itemName, int atkdmg, int ms, int armr, int str, int dex, int intell, int hp, int hpreg,
+	public Item(String itemName, int atkdmg,int atkspd, int ms, int armr, int str, int dex, int intell, int hp, int hpreg,
 			int mana, int manareg, int magres, int statres, int spellamp,String itemImg) {
 
 		this.setAtkdmg(atkdmg);
+		this.setAtkspd(atkspd);
 		this.setMs(ms);
 		this.setArmr(armr);
 		this.setStr(str);
@@ -183,6 +185,14 @@ public class Item {
 
 	public void setItemImg(String itemImg) {
 		this.itemImg = itemImg;
+	}
+
+	public int getAtkspd() {
+		return atkspd;
+	}
+
+	public void setAtkspd(int atkspd) {
+		this.atkspd = atkspd;
 	}
 
 }
