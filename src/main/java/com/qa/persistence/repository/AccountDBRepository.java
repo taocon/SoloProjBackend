@@ -55,9 +55,13 @@ public class AccountDBRepository implements AccountRepository {
 	public String updateAccount(Long id,String accountToUpdate) {
 		Account updatedAccount = util.getObjectForJSON(accountToUpdate, Account.class);
 		Account accountFromDB = findAccount(id);
+		Long placeId ;
+		
+		manager.remove(accountFromDB);
+		
+		
 		if (accountToUpdate != null) {
-			accountFromDB = updatedAccount;
-			manager.merge(accountFromDB);
+			manager.persist(updatedAccount);
 		}
 		return "{\"MESSAGE\" : \"account was succesfully updated\"}";
 	}

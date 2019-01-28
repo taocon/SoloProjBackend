@@ -26,6 +26,13 @@ public class ItemEndpoint {
 	public String getAllItem() {
 		return service.getAllItems();
 	}
+	
+	@Path("/get/{id}")
+	@GET
+	@Produces({ "application/json" })
+	public String getAnItem(@PathParam("id") Long id) {
+		return service.getAnItem(id);
+	}
 
 	public void setService(ItemService service) {
 		this.service = service;

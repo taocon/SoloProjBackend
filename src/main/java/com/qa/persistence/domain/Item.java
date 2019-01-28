@@ -19,28 +19,28 @@ public class Item {
 	@Id
 	private Long itemId;
 	private String itemName;
-	private int atkdmg;
-	private int atkspd;
-	private int ms;
-	private int armr;
-	private int str;
-	private int dex;
-	private int intell;
-	private int hp;
-	private int hpreg;
-	private int mana;
-	private int manareg;
-	private int magres;
-	private int statres;
-	private int spellamp;
+	private float atkdmg;
+	private float atkspd;
+	private float ms;
+	private float armr;
+	private float str;
+	private float dex;
+	private float intell;
+	private float hp;
+	private float hpreg;
+	private float mana;
+	private float manareg;
+	private float magres;
+	private float statres;
+	private float spellamp;
 	private String itemImg;
 
 	public Item() {
 
 	}
 
-	public Item(String itemName, int atkdmg,int atkspd, int ms, int armr, int str, int dex, int intell, int hp, int hpreg,
-			int mana, int manareg, int magres, int statres, int spellamp,String itemImg) {
+	public Item(String itemName, float atkdmg,float atkspd, float ms, float armr, float str, float dex, float intell, float hp, float hpreg,
+			float mana, float manareg, float magres, float statres, float spellamp,String itemImg) {
 
 		this.setAtkdmg(atkdmg);
 		this.setAtkspd(atkspd);
@@ -75,107 +75,107 @@ public class Item {
 		this.itemName = itemName;
 	}
 
-	public int getAtkdmg() {
+	public float getAtkdmg() {
 		return atkdmg;
 	}
 
-	public void setAtkdmg(int atkdmg) {
-		this.atkdmg = atkdmg;
+	public void setAtkdmg(float atkdmg2) {
+		this.atkdmg = atkdmg2;
 	}
 
-	public int getMs() {
+	public float getMs() {
 		return ms;
 	}
 
-	public void setMs(int ms) {
+	public void setMs(float ms) {
 		this.ms = ms;
 	}
 
-	public int getArmr() {
+	public float getArmr() {
 		return armr;
 	}
 
-	public void setArmr(int armr) {
+	public void setArmr(float armr) {
 		this.armr = armr;
 	}
 
-	public int getStr() {
+	public float getStr() {
 		return str;
 	}
 
-	public void setStr(int str) {
-		this.str = str;
+	public void setStr(float str2) {
+		this.str = str2;
 	}
 
-	public int getDex() {
+	public float getDex() {
 		return dex;
 	}
 
-	public void setDex(int dex) {
+	public void setDex(float dex) {
 		this.dex = dex;
 	}
 
-	public int getIntell() {
+	public float getIntell() {
 		return intell;
 	}
 
-	public void setIntell(int intell) {
+	public void setIntell(float intell) {
 		this.intell = intell;
 	}
 
-	public int getHp() {
+	public float getHp() {
 		return hp;
 	}
 
-	public void setHp(int hp) {
+	public void setHp(float hp) {
 		this.hp = hp;
 	}
 
-	public int getHpreg() {
+	public float getHpreg() {
 		return hpreg;
 	}
 
-	public void setHpreg(int hpreg) {
+	public void setHpreg(float hpreg) {
 		this.hpreg = hpreg;
 	}
 
-	public int getMana() {
+	public float getMana() {
 		return mana;
 	}
 
-	public void setMana(int mana) {
+	public void setMana(float mana) {
 		this.mana = mana;
 	}
 
-	public int getManareg() {
+	public float getManareg() {
 		return manareg;
 	}
 
-	public void setManareg(int manareg) {
+	public void setManareg(float manareg) {
 		this.manareg = manareg;
 	}
 
-	public int getMagres() {
+	public float getMagres() {
 		return magres;
 	}
 
-	public void setMagres(int magres) {
+	public void setMagres(float magres) {
 		this.magres = magres;
 	}
 
-	public int getStatres() {
+	public float getStatres() {
 		return statres;
 	}
 
-	public void setStatres(int statres) {
+	public void setStatres(float statres) {
 		this.statres = statres;
 	}
 
-	public int getSpellamp() {
+	public float getSpellamp() {
 		return spellamp;
 	}
 
-	public void setSpellamp(int spellamp) {
+	public void setSpellamp(float spellamp) {
 		this.spellamp = spellamp;
 	}
 
@@ -187,12 +187,12 @@ public class Item {
 		this.itemImg = itemImg;
 	}
 
-	public int getAtkspd() {
+	public float getAtkspd() {
 		return atkspd;
 	}
 
-	public void setAtkspd(int atkspd) {
-		this.atkspd = atkspd;
+	public void setAtkspd(float atkspd2) {
+		this.atkspd = atkspd2;
 	}
 
 }
