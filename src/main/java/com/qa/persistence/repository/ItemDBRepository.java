@@ -14,7 +14,7 @@ import javax.transaction.Transactional;
 
 import org.apache.log4j.Logger;
 
-
+import com.qa.persistence.domain.Account;
 import com.qa.persistence.domain.Item;
 import com.qa.util.JSONUtil;
 
@@ -43,6 +43,19 @@ public class ItemDBRepository implements ItemRepository {
 		Query query= manager.createQuery("Select i FROM Item i");
 		Collection<Item> result = (Collection<Item>) query.getResultList();
 		return util.getJSONForObject(result);
+	}
+	
+
+	public String getAnItem(Long id) {
+		Item itemInDB = findItem(id);
+		if (itemInDB != null) {
+			return util.getJSONForObject(itemInDB);
+		}
+		return "{\"message\": \"account sucessfully deleted\"}";
+	}
+	
+	private Item findItem(Long id) {
+		return manager.find(Item.class, id);
 	}
 
 

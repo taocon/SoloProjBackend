@@ -24,4 +24,10 @@ public class ItemServiceImpl implements ItemService {
 	}
 
 
+	public String getAnItem(Long id) {
+		return repo.getAnItem(id);
+	
+	}
+
+
 }
