@@ -69,6 +69,7 @@ public class AccountDBRepository implements AccountRepository {
 	@Transactional(REQUIRED)
 	public String deleteAccount(Long id) {
 		Account accountInDB = findAccount(id);
+		
 		if (accountInDB != null) {
 			manager.remove(accountInDB);
 		}
