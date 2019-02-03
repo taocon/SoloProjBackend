@@ -21,25 +21,16 @@ import com.qa.util.JSONUtil;
 @Transactional(SUPPORTS)
 @Default
 public class AccountDBRepository implements AccountRepository {
-	
-	
-	
-	
-	
+
 // tells the manager to look in the persistence xml and use the persistence unit called primary
 	@PersistenceContext(unitName = "primary")
-	
-	
 	private EntityManager manager;
+
 	@Inject
 	private JSONUtil util;
 
 	public String getAllAccounts() {
-//		Query query = manager.createQuery("Select a FROM Account a");
-//		Collection<Account> accounts = (Collection<Account>) query.getResultList();
-//		return util.getJSONForObject(accounts);
-		
-		Query query= manager.createQuery("Select a FROM Account a");
+		Query query = manager.createQuery("Select a FROM Account a");
 		Collection<Account> result = (Collection<Account>) query.getResultList();
 		return util.getJSONForObject(result);
 	}
@@ -48,32 +39,28 @@ public class AccountDBRepository implements AccountRepository {
 	public String createAccount(String account) {
 		Account aAccount = util.getObjectForJSON(account, Account.class);
 		manager.persist(aAccount);
-		return "{\"message\": \"classroom has been sucessfully added\"}";
+		return "{\"message\": \"Account has been sucessfully added\"}";
 	}
-	
+
 	@Transactional(REQUIRED)
-	public String updateAccount(Long id,String accountToUpdate) {
+	public String updateAccount(Long id, String accountToUpdate) {
 		Account updatedAccount = util.getObjectForJSON(accountToUpdate, Account.class);
 		Account accountFromDB = findAccount(id);
-		Long placeId ;
-		
 		manager.remove(accountFromDB);
-		
-		
 		if (accountToUpdate != null) {
 			manager.persist(updatedAccount);
 		}
-		return "{\"MESSAGE\" : \"account was succesfully updated\"}";
+		return "{\"MESSAGE\" : \"Account was succesfully updated\"}";
 	}
 
 	@Transactional(REQUIRED)
 	public String deleteAccount(Long id) {
 		Account accountInDB = findAccount(id);
-		
+
 		if (accountInDB != null) {
 			manager.remove(accountInDB);
 		}
-		return "{\"message\": \"account sucessfully deleted\"}";
+		return "{\"message\": \"Account sucessfully deleted\"}";
 	}
 
 	private Account findAccount(Long id) {

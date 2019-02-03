@@ -28,24 +28,18 @@ public class ItemDBRepository implements ItemRepository {
 	
 // tells the manager to look in the persistence xml and use the persistence unit called primary
 	@PersistenceContext(unitName = "primary")
-	
-	
 	private EntityManager manager;
+	
 	@Inject
 	private JSONUtil util;
 
 
 	public String getAllItems() {
-//		Query query = manager.createQuery("Select a FROM Account a");
-//		Collection<Account> accounts = (Collection<Account>) query.getResultList();
-//		return util.getJSONForObject(accounts);
-		
 		Query query= manager.createQuery("Select i FROM Item i");
 		Collection<Item> result = (Collection<Item>) query.getResultList();
 		return util.getJSONForObject(result);
 	}
 	
-
 	public String getAnItem(Long id) {
 		Item itemInDB = findItem(id);
 		if (itemInDB != null) {
